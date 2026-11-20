@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+
+        vector<int> index(2);   // store the indices
+
+        for (int i = 0; i < nums.size(); i++) {
+            for (int j = i + 1; j < nums.size(); j++) {
+
+                if (nums[i] + nums[j] == target) {
+                    index[0] = i;
+                    index[1] = j;
+
+                    // sort to put the smallest index first
+                    if (index[1] < index[0])
+                        std::swap(index[0], index[1]);
+                    
+                    return index;
+                }
+
+            }
+        }
+        
+        return index;
+    }
+};
